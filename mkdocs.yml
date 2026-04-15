@@ -1,0 +1,17 @@
+site_name: VaultKeeper
+site_description: Local Android password manager project documentation
+site_url: https://example.github.io/vaultkeeper/
+theme:
+  name: material
+  language: en
+  palette:
+    primary: green
+    accent: deep orange
+nav:
+  - Home: index.md
+  - Functional Requirements: requirements.md
+  - File Diagram: file-diagram.md
+  - Additional Specification: specification.md
+  - Database Schema: database.md
+  - Presentation: presentation.md
+  - Team Workflow: project-management/issues.md
