@@ -1,10 +1,10 @@
 package com.example.passwordmanager.security
 
+import android.util.Base64
 import com.example.passwordmanager.data.local.dao.SecurityMetaDao
 import com.example.passwordmanager.data.local.entity.SecurityMetaEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import java.util.Base64
 import javax.crypto.SecretKey
 
 class DefaultMasterPasswordManager(
@@ -27,7 +27,7 @@ class DefaultMasterPasswordManager(
             val salt = cryptoManager.generateSalt()
             val secretKey = cryptoManager.deriveKey(password, salt, iterations)
             val meta = SecurityMetaEntity(
-                saltBase64 = Base64.getEncoder().encodeToString(salt),
+                saltBase64 = Base64.encodeToString(salt, Base64.NO_WRAP),
                 verifierBase64 = cryptoManager.createVerifier(secretKey),
                 iterations = iterations,
                 createdAt = System.currentTimeMillis(),
@@ -39,7 +39,7 @@ class DefaultMasterPasswordManager(
 
     override suspend fun unlock(password: String): Boolean = withContext(Dispatchers.IO) {
         val meta = securityMetaDao.getMeta() ?: return@withContext false
-        val salt = Base64.getDecoder().decode(meta.saltBase64)
+        val salt = Base64.decode(meta.saltBase64, Base64.DEFAULT)
         val secretKey = cryptoManager.deriveKey(password, salt, meta.iterations)
         val verifier = cryptoManager.createVerifier(secretKey)
         val matches = verifier == meta.verifierBase64
