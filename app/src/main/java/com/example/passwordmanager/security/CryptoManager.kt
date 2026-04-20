@@ -1,8 +1,8 @@
 package com.example.passwordmanager.security
 
-import android.util.Base64
 import java.security.MessageDigest
 import java.security.SecureRandom
+import java.util.Base64
 import javax.crypto.Cipher
 import javax.crypto.SecretKey
 import javax.crypto.SecretKeyFactory
@@ -28,7 +28,7 @@ class CryptoManager(
 
     fun createVerifier(secretKey: SecretKey): String {
         val digest = MessageDigest.getInstance("SHA-256").digest(secretKey.encoded)
-        return Base64.encodeToString(digest, Base64.NO_WRAP)
+        return Base64.getEncoder().encodeToString(digest)
     }
 
     fun encrypt(plainText: String, secretKey: SecretKey): String {
@@ -36,11 +36,11 @@ class CryptoManager(
         val cipher = Cipher.getInstance("AES/GCM/NoPadding")
         cipher.init(Cipher.ENCRYPT_MODE, secretKey, GCMParameterSpec(128, nonce))
         val encrypted = cipher.doFinal(plainText.toByteArray(Charsets.UTF_8))
-        return Base64.encodeToString(nonce + encrypted, Base64.NO_WRAP)
+        return Base64.getEncoder().encodeToString(nonce + encrypted)
     }
 
     fun decrypt(cipherText: String, secretKey: SecretKey): String {
-        val decoded = Base64.decode(cipherText, Base64.DEFAULT)
+        val decoded = Base64.getDecoder().decode(cipherText)
         val nonce = decoded.copyOfRange(0, 12)
         val payload = decoded.copyOfRange(12, decoded.size)
         val cipher = Cipher.getInstance("AES/GCM/NoPadding")
