@@ -1,0 +1,38 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#f7fbf7"/>
+  <rect x="260" y="60" width="860" height="640" rx="14" fill="#ffffff" stroke="#2f6f4f" stroke-width="3"/>
+  <text x="690" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#1f4f39">VaultKeeper Use Case Diagram</text>
+
+  <circle cx="120" cy="210" r="32" fill="#e7f5ec" stroke="#2f6f4f" stroke-width="3"/>
+  <line x1="120" y1="242" x2="120" y2="322" stroke="#2f6f4f" stroke-width="4"/>
+  <line x1="80" y1="275" x2="160" y2="275" stroke="#2f6f4f" stroke-width="4"/>
+  <line x1="120" y1="322" x2="90" y2="378" stroke="#2f6f4f" stroke-width="4"/>
+  <line x1="120" y1="322" x2="150" y2="378" stroke="#2f6f4f" stroke-width="4"/>
+  <text x="120" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#1f4f39">User</text>
+
+  <ellipse cx="520" cy="190" rx="210" ry="52" fill="#eef7ff" stroke="#2a5f88" stroke-width="3"/>
+  <text x="520" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#1f3f5a">Create master password</text>
+
+  <ellipse cx="520" cy="300" rx="210" ry="52" fill="#eef7ff" stroke="#2a5f88" stroke-width="3"/>
+  <text x="520" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#1f3f5a">Unlock vault</text>
+
+  <ellipse cx="520" cy="410" rx="210" ry="52" fill="#eef7ff" stroke="#2a5f88" stroke-width="3"/>
+  <text x="520" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#1f3f5a">Manage entries (CRUD)</text>
+
+  <ellipse cx="860" cy="240" rx="210" ry="52" fill="#fff4ec" stroke="#9b5a22" stroke-width="3"/>
+  <text x="860" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#6f3b12">Search and favorite entries</text>
+
+  <ellipse cx="860" cy="380" rx="210" ry="52" fill="#fff4ec" stroke="#9b5a22" stroke-width="3"/>
+  <text x="860" y="388" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#6f3b12">Check breach status via HIBP</text>
+
+  <ellipse cx="860" cy="520" rx="210" ry="52" fill="#fff4ec" stroke="#9b5a22" stroke-width="3"/>
+  <text x="860" y="528" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#6f3b12">Lock vault manually</text>
+
+  <line x1="160" y1="270" x2="310" y2="210" stroke="#2f6f4f" stroke-width="2.5"/>
+  <line x1="160" y1="280" x2="310" y2="300" stroke="#2f6f4f" stroke-width="2.5"/>
+  <line x1="160" y1="290" x2="310" y2="410" stroke="#2f6f4f" stroke-width="2.5"/>
+
+  <line x1="650" y1="230" x2="710" y2="250" stroke="#6b6b6b" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <line x1="650" y1="330" x2="710" y2="360" stroke="#6b6b6b" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <line x1="650" y1="440" x2="710" y2="510" stroke="#6b6b6b" stroke-width="2.5" stroke-dasharray="8 6"/>
+</svg>

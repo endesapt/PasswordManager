@@ -1,6 +1,5 @@
-site_name: VaultKeeper
-site_description: Local Android password manager project documentation
-site_url: https://example.github.io/vaultkeeper/
+﻿site_name: VaultKeeper
+site_description: VaultKeeper documentation for PMVS course submission
 theme:
   name: material
   language: en
@@ -14,4 +13,3 @@ nav:
   - Additional Specification: specification.md
   - Database Schema: database.md
   - Presentation: presentation.md
-  - Team Workflow: project-management/issues.md
